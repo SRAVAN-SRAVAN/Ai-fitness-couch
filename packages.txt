@@ -1,0 +1,7 @@
+# System dependencies for Hugging Face Spaces
+# Audio processing dependencies
+portaudio19-dev
+python3-dev
+pkg-config
+gcc
+g++

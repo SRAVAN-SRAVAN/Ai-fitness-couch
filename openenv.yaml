@@ -1,0 +1,83 @@
+# AI Fitness Coach OpenEnv Configuration
+name: ai-fitness-coach
+description: AI-powered fitness coaching environment with workout tracking, BMI calculation, and personalized recommendations
+
+environment:
+  type: python
+  python_version: "3.9"
+
+dependencies:
+  - streamlit>=1.56.0
+  - pandas>=1.3.0
+  - plotly>=6.6.0
+  - pydantic>=2.12.5
+  - python-dotenv>=1.2.2
+  - openai>=2.30.0
+  - requests>=2.25.0
+
+entry_points:
+  main:
+    command: streamlit run app/streamlit_app.py --server.port 7860 --server.address 0.0.0.0
+    description: Launch the AI Fitness Coach web interface
+
+metadata:
+  author: AI Fitness Team
+  version: "1.0.0"
+  tags:
+    - fitness
+    - health
+    - ai
+    - coaching
+    - streamlit
+  
+  documentation: |
+    This environment provides an AI-powered fitness coaching application with:
+    - Personalized workout tracking and logging
+    - BMI calculation and health metrics
+    - Calorie tracking and nutrition guidance
+    - Weekly progress reports with AI analysis
+    - Interactive chat with AI fitness coach
+    - Goal setting and achievement tracking
+    
+    The application uses Streamlit for the web interface and OpenAI for AI-powered coaching.
+
+tasks:
+  - name: "Basic Workout Logging"
+    description: "Log at least one correct workout session with valid parameters"
+    difficulty: "easy"
+    
+  - name: "Calorie Deficit Maintenance"
+    description: "Maintain a calorie deficit of at least 500 calories for 3 consecutive days"
+    difficulty: "medium"
+    
+  - name: "BMI Improvement Challenge"
+    description: "Improve BMI over a simulated week by tracking weight and maintaining consistent exercise"
+    difficulty: "hard"
+
+evaluation:
+  metrics:
+    - name: "workout_consistency"
+      description: "Percentage of days with logged workouts"
+      weight: 0.3
+      
+    - name: "calorie_tracking_accuracy"
+      description: "Accuracy of calorie intake vs expenditure tracking"
+      weight: 0.3
+      
+    - name: "goal_achievement_rate"
+      description: "Rate of achieving weekly fitness goals"
+      weight: 0.2
+      
+    - name: "engagement_score"
+      description: "User engagement with AI coach and features"
+      weight: 0.2
+
+resources:
+  memory: "2GB"
+  cpu: "1"
+  
+security:
+  environment_variables:
+    - OPENAI_API_KEY
+    - STREAMLIT_SERVER_PORT
+    - STREAMLIT_SERVER_ADDRESS
